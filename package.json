@@ -1,0 +1,49 @@
+{
+  "name": "got-github-blob",
+  "version": "0.0.0",
+  "description": "Got a blob from github",
+  "license": "MIT",
+  "repository": "ragingwind/got-github-blob",
+  "author": {
+    "name": "ragingwind",
+    "email": "ragingwind@gmail.com",
+    "url": "ragingwind.me"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "github",
+    "blob",
+    "download",
+    "got",
+    "file"
+  ],
+  "dependencies": {
+    "execa": "^0.1.1",
+    "got": "^5.3.0",
+    "mkdirp": "^0.5.1",
+    "pathize-github-url": "^0.1.0",
+    "temp-write": "^2.1.0"
+  },
+  "devDependencies": {
+    "ava": "^0.3.0",
+    "xo": "^0.10.0"
+  },
+  "xo": {
+    "esnext": true,
+    "ignores": [
+      "test.js"
+    ]
+  },
+  "jshintConfig": {
+    "esnext": true,
+    "node": true
+  }
+}
