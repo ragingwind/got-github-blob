@@ -1,6 +1,6 @@
 {
   "name": "got-github-blob",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Got a blob from github",
   "license": "MIT",
   "repository": "ragingwind/got-github-blob",
