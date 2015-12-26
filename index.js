@@ -43,7 +43,7 @@ module.exports = function (filepath, dest) {
 			got.stream(file.url.href).on('error', err => {
 				reject(err);
 			}).pipe(fs.createWriteStream(file.dest)).on('close', () => {
-				resolve(file.dest);
+				resolve(file);
 			}).on('error', err => {
 				reject(err);
 			});
