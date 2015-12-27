@@ -17,13 +17,15 @@ function testWithFiles(files) {
 
 test(t => {
 	testWithFiles([
-		'https://raw.githubusercontent.com/ragingwind/mobile-chromeapp-starter-kit/patch/app.js',
-		'https://raw.githubusercontent.com/ragingwind/mobile-chromeapp-starter-kit/patch/gulpfile.js',
+		'https://github.com/ragingwind/mobile-chromeapp-starter-kit/blob/patch/src/app/scripts/app.js',
+		'https://raw.githubusercontent.com/ragingwind/mobile-chromeapp-starter-kit/patch/src/app/scripts/app.js',
+		'https://github.com/ragingwind/mobile-chromeapp-starter-kit/blob/patch/src/gulpfile.js',
+		'https://raw.githubusercontent.com/ragingwind/mobile-chromeapp-starter-kit/patch/src/gulpfile.js',
 		'https://github.com/ragingwind/mobile-chromeapp-starter-kit/blob/master/src/platform/config.xml'
-	]).then(dest => {
-		t.ok(fs.statSync(dest[0]).isFile());
-		t.ok(fs.statSync(dest[1]).isFile());
-		t.ok(fs.statSync(dest[2]).isFile());
+	]).then(res => {
+		for (const r of res) {
+			t.ok(fs.lstatSync(r.dest).isFile());
+		}
 		return this;
 	}, () => {
 		t.fail('Not found file');
